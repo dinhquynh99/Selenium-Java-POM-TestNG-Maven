@@ -1,7 +1,7 @@
 package pageUIs.saucedemo;
 
 public class YourCartUI {
-    public static final String LABEL_HEADER_YOUR_CART = "//span[text()='Your Cart']";
+    public static final String HEADER_LABEL = "//span[text()='Your Cart']";
     public static final String CART_ITEMS = "//div[@class='cart_item']";
     public static final String ITEM_NAME = "//div[text()='Sauce Labs Backpack']";
     public static final String ITEM_PRICE = "//div[text()='29.99']";

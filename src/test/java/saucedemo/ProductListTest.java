@@ -3,6 +3,7 @@ package saucedemo;
 import core.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -27,13 +28,13 @@ public class ProductListTest extends BaseTest {
     @Test
     public void TC_01_Verify_Header_Displayed(){
         Assert.assertTrue(productsListPage.isHeaderLabelDisplay());
-        productsListPage.sleepInSecond(2);
+
     }
 
     @Test
     public void TC_02_Verify_Product_List_Displayed(){
         Assert.assertEquals(productsListPage.getNumberOfProducts(),6);
-        productsListPage.sleepInSecond(2);
+
     }
 
     @Test
@@ -67,18 +68,23 @@ public class ProductListTest extends BaseTest {
         productsListPage.addItemToCartByIndex(1);
         Assert.assertEquals(productsListPage.getCartCount(), 2);
         productsListPage.sleepInSecond(2);
+
     }
 
     @Test
     public void TC_05_Remove_Out_Cart(){
         productsListPage.removeItemToCartByIndex(0);
         Assert.assertEquals(productsListPage.getCartCount(),1);
-        productsListPage.sleepInSecond(2);
 
         // Vì remote index 0 thì List button chỉ còn 1 phần tử nên vẫn là index 0
         productsListPage.removeItemToCartByIndex(0);
         Assert.assertEquals(productsListPage.getCartCount(),0);
-        productsListPage.sleepInSecond(2);
+
+    }
+
+    @AfterClass
+    public void afterClass() {
+        driver.quit();
 
     }
 

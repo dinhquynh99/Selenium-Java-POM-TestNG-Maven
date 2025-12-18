@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pageUIs.saucedemo.ProductsListUI;
+import pageUIs.saucedemo.YourCartUI;
 
 import java.util.List;
 
@@ -13,6 +14,10 @@ public class ProductsListPO extends BasePage {
 
     public ProductsListPO(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public String getCurrentUrl(){
+        return getPageURL(driver );
     }
 
     public void clickToHamburgerMenu() {

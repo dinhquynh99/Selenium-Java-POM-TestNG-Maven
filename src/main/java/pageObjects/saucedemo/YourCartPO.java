@@ -15,8 +15,8 @@ public class YourCartPO extends BasePage {
     }
 
     public boolean isHeaderLablelDisplay(){
-        waitElementVisible(driver, YourCartUI.LABEL_HEADER_YOUR_CART);
-        return isElementDisplayed(driver, YourCartUI.LABEL_HEADER_YOUR_CART);
+        waitElementVisible(driver, YourCartUI.HEADER_LABEL);
+        return isElementDisplayed(driver, YourCartUI.HEADER_LABEL);
     }
 
     public List<WebElement> getCartItems(){
